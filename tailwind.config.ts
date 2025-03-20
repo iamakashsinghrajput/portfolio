@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import { type Config } from 'tailwindcss';
-import defaultTheme from 'tailwindcss/defaultTheme';
+// import { type Config } from 'tailwindcss';
+// import defaultTheme from 'tailwindcss/defaultTheme';
 // import fontFamily  from 'tailwindcss/defaultTheme';
 
 const config = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Segoe UI', 
-                         'Helvetica Neue', 
-                         'Arial',
-                         'sans-serif',
-                         /*...*/ defaultTheme.fontFamily.sans],
-      },
+      // fontFamily: {
+      //   sans: ['Segoe UI', 
+      //                    'Helvetica Neue', 
+      //                    'Arial',
+      //                    'sans-serif',
+      //                    /*...*/ defaultTheme.fontFamily.sans],
+      // },
       colors: {
         primary: '#6919FF',
         neutrals: {
@@ -191,6 +191,7 @@ const config = {
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require('@tailwindcss/typography')],
-} satisfies Config;
+// } satisfies Config;
+};
 
 export default config;

@@ -5,6 +5,8 @@ import {
   MobileNavigationOverlay,
   MobileNavigationToggle,
 } from '@/src/components/layout/mobile-navigation';
+import headimg from "@/src/assets/lokkeestudios.svg";
+import Image from 'next/image';
 import { Button } from '@/src/components/ui/button';
 import { Container } from '@/src/components/ui/container';
 import { useScrollThreshold } from '@/src/hooks/use-scroll-threshold';
@@ -73,7 +75,13 @@ function Header() {
               ))}
             </nav>
             <div className="flex items-center justify-center">
-              <a href="#" title="Navigate home" data-astro-prefetch className="hover:animate-jiggle"></a>
+              <a href="#" title="Navigate home" className="hover:animate-jiggle">
+                <Image
+                    src={headimg}
+                    alt="LOKKEE STUDIOS"
+                    className="h-12 md:h-12"
+                  />
+              </a>
             </div>
             <div className="flex items-center justify-end">
               <Button
