@@ -16,7 +16,7 @@ import {
 
 import { cn } from "@/src/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-import Image, { ImageProps } from "next/image";
+import Image, { ImageProps, StaticImageData } from "next/image"; // Import StaticImageData
 import { useOutsideClick } from "@/src/hooks/use-outside-click";
 import { JSX } from "react/jsx-runtime";
 
@@ -26,7 +26,7 @@ interface CarouselProps {
 }
 
 type Card = {
-  src: string;
+  src: string | StaticImageData; // Update here
   title: string;
   category: string;
   content: React.ReactNode;
@@ -124,7 +124,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     once: true,
                   },
                 }}
-                key={"card" + index}
+                key={index} // Use index for key
                 className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
               >
                 {item}

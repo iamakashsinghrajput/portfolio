@@ -1,6 +1,6 @@
 "use client";
-// import Image from "next/image";
 import React from "react";
+
 import { Carousel, Card } from "@/src/components/ui/apple-cards-carousel";
 import Weather from "@/src/assets/weather.png";
 import Detective from "@/src/assets/detectivedev.png";
@@ -11,12 +11,12 @@ import Thyleads from "@/src/assets/Thyleads.png";
 import Techscholars from "@/src/assets/Techscholars.png";
 
 export function AppleCardsCarouselDemo() {
-  const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
+const cards = data.map((card, index) => (
+    <Card key={index} card={card} index={index} />
   ));
 
   return (
-    <div className="h-fullrelative z-50 w-full bg-[#000000]">
+    <div className="h-full relative z-50 w-full bg-[#000000]">
       {/* <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         Dig into my Universe.
       </h2> */}
