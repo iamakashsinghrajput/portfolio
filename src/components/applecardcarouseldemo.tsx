@@ -5,10 +5,11 @@ import { Carousel, Card } from "@/src/components/ui/apple-cards-carousel";
 import Weather from "@/src/assets/weather.png";
 import Detective from "@/src/assets/detectivedev.png";
 import tictactoe from "@/src/assets/tictactoe.png";
-import Dribbble from "@/src/assets/Dribbble.png";
 import Primedrive from "@/src/assets/PrimeDrive.png";
 import Thyleads from "@/src/assets/Thyleads.png";
 import Techscholars from "@/src/assets/Techscholars.png";
+import Dribble from "@/src/assets/dribble.png";
+import Primedrive2 from "@/src/assets/PrimeDrive2.0.png";
 
 export function AppleCardsCarouselDemo() {
 const cards = data.map((card, index) => (
@@ -17,9 +18,6 @@ const cards = data.map((card, index) => (
 
   return (
     <div className="h-full relative z-50 w-full bg-[#000000]">
-      {/* <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-        Dig into my Universe.
-      </h2> */}
       <Carousel items={cards} />
     </div>
   );
@@ -75,6 +73,57 @@ const DummyContent = () => {
     </>
   );
 };
+
+const DummyContent6 = () => {
+  return (
+    <>
+      {[...new Array(1).fill(1)].map((_, index) => {
+        return (
+          <div
+            key={"dummy-content" + index}
+            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+          >
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+              I created Dribble 2.0,
+              </span>{" "}
+              a modern redesign and functional clone of the popular design platform Dribbble, 
+              crafted to showcase curated design content in an engaging and interactive layout. 
+              Built using Tailwind CSS, and Next.js, MongoDB this project reflects my skills in 
+              modern frontend & backend architecture, component-based design, and responsive UI development.
+            </p>
+            <br/>
+            <br/>
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+              Key Features & Contributions:
+              </span>{<br/>}
+               - Engineered a clean and intuitive interface using Next.js and Tailwind CSS, closely mimicking the look and feel of Dribbble with a custom aesthetic twist.
+               <br/>
+               - Developed a dynamic gallery layout, allowing users to browse and view design inspirations effortlessly.
+               <br/>
+               - Integrated category-based filtering and hover interactions to enhance user engagement and ease of content exploration.
+               <br/>
+               - Deployed with Vercel for optimal performance and seamless hosting, ensuring lightning-fast loading and responsiveness on all devices.
+            </p>
+            <br/>
+            <br/>
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+                Link:
+              </span>
+              <br/>
+              <br/>
+              <a href="https://dribble-2-0.vercel.app">Dribble 2.0</a>
+            </p>
+            <br/>
+            <br/>
+          </div>
+        );
+      })}
+    </>
+  );
+}
 
 
 const DummyContent2 = () => {
@@ -285,56 +334,7 @@ const DummyContent5 = () => {
   );
 }
 
-const DummyContent6 = () => {
-  return (
-    <>
-      {[...new Array(1).fill(1)].map((_, index) => {
-        return (
-          <div
-            key={"dummy-content" + index}
-            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
-          >
-            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-              <span className="font-bold text-neutral-700 dark:text-neutral-200">
-              I developed Dribblone,
-              </span>{" "}
-              a Dribbble-inspired design showcase platform that allows users to explore 
-              and share creative design ideas. Built with React.js, Tailwind CSS, and HTML, 
-              this project highlights my expertise in frontend development, UI/UX design, 
-              and responsive web applications.
-            </p>
-            <br/>
-            <br/>
-            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-              <span className="font-bold text-neutral-700 dark:text-neutral-200">
-              Key Features & Contributions:
-              </span>{<br/>}
-               - Designed and implemented a sleek, responsive UI using React.js and Tailwind CSS for a modern and interactive experience.
-               <br/>
-               - Developed a dynamic gallery layout, allowing users to browse and view design inspirations effortlessly.
-               <br/>
-               - Optimized performance for fast loading, ensuring smooth navigation and responsiveness across all devices.
-               <br/>
-               - Focused on pixel-perfect design, maintaining consistency and visual appeal across different screen sizes.
-            </p>
-            <br/>
-            <br/>
-            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-              <span className="font-bold text-neutral-700 dark:text-neutral-200">
-                Link:
-              </span>
-              <br/>
-              <br/>
-              <a href="https://dribblone.vercel.app">Dribblelone</a>
-            </p>
-            <br/>
-            <br/>
-          </div>
-        );
-      })}
-    </>
-  );
-}
+
 
 const DummyContent7 = () => {
   return (
@@ -386,6 +386,35 @@ const DummyContent7 = () => {
   );
 }
 
+
+const DummyContent8 = () => {
+  return (
+    <>
+      {[...new Array(1).fill(1)].map((_, index) => {
+        return (
+          <div
+            key={"dummy-content" + index}
+            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+          >
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+              I developed PrimeDrive 2.0,
+              </span>{" "}
+              an innovative car booking platform designed to provide a seamless and 
+              hassle-free experience for users looking to rent vehicles. 
+              Built using Next.js, Tailwind CSS, and HTML, this project showcases 
+              my ability to create dynamic, responsive, and user-friendly web applications.
+            </p>
+            <br/>
+            <br/>
+            <h1 className="pl-6 text-5xl text-white font-bold">COMING SOON</h1>
+          </div>
+        );
+      })}
+    </>
+  );
+}
+
 const data = [
   {
     category: "Thyleads",
@@ -393,6 +422,13 @@ const data = [
     // src: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     src: Thyleads,
     content: <DummyContent />,
+  },
+  {
+    category: "Dribble 2.0",
+    title: "Designs for your portfolio",
+    // src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: Dribble,
+    content: <DummyContent6 />,
   },
   {
     category: "Detective Dev",
@@ -407,6 +443,13 @@ const data = [
     // src: "https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     src: Weather,
     content: <DummyContent3 />,
+  },
+  {
+    category: "PrimeDrive 2.0",
+    title: "LAUNCHING SOON.",
+    // src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src : Primedrive2,
+    content: <DummyContent8 />,
   },
 
   {
@@ -423,13 +466,6 @@ const data = [
     src : Primedrive,
     content: <DummyContent5 />,
   },
-  {
-    category: "Dribblelone",
-    title: "Designs for your portfolio",
-    // src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    src: Dribbble,
-    content: <DummyContent6 />,
-  },
 
   {
     category: "Tic Tac Toe",
@@ -438,4 +474,6 @@ const data = [
     src: tictactoe,
     content: <DummyContent7 />,
   },
+
+  
 ];
