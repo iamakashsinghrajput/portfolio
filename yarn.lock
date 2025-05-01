@@ -2447,7 +2447,7 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-next@^15.2.2:
+next@^15.2.3:
   version "15.2.3"
   resolved "https://registry.yarnpkg.com/next/-/next-15.2.3.tgz#1ac803c08076d47eb5b431cb625135616c6bec7e"
   integrity sha512-x6eDkZxk2rPpu46E1ZVUWIBhYCLszmUY6fvHBFcbzJ9dD+qRX6vcHusaqqDlnY+VngKzKbAiG2iRCkPbmi8f7w==
@@ -2482,8 +2482,9 @@ node-addon-api@^7.0.0:
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-7.1.1.tgz#1aba6693b0f255258a049d621329329322aad558"
   integrity sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==
 
-"node-pdftocairo@github:sashee/node-pdftocairo#master":
+node-pdftocairo@sashee/node-pdftocairo#master:
   version "1.1.0"
+  uid a38b8c1d27401ca92ef60164e9c01e1d1116f92f
   resolved "https://codeload.github.com/sashee/node-pdftocairo/tar.gz/a38b8c1d27401ca92ef60164e9c01e1d1116f92f"
   dependencies:
     glob "^7.1.6"
