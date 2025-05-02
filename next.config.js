@@ -6,8 +6,7 @@ const nextConfig = {
 };
 
 module.exports = {
-    webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-      // Add the PDF loader configuration
+    webpack: (config, { }) => {
       config.module.rules.push({
         test: /\.pdf$/,
         use: [

@@ -17,15 +17,15 @@ import { useState } from 'react';
 const links: { label: string; href: string }[] = [
   {
     label: 'About',
-    href: '/#about',
+    href: '#about',
   },
   {
     label: 'Work',
-    href: '/#work',
+    href: '#work',
   },
   {
     label: 'Contacts',
-    href: '/#contacts',
+    href: '#contact',
   },
 ];
 
@@ -86,7 +86,7 @@ function Header() {
             <div className="flex items-center justify-end">
               <Button
                 as="a"
-                href="/#contacts"
+                href="#contact"
                 size="small"
                 isGhost
                 className="rounded-full hover:bg-white hover:text-black bg-transparent text-white"

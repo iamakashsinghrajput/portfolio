@@ -1,38 +1,66 @@
 @import "tailwindcss";
+
+/* Import optional Tailwind animation library if you use it */
+@import "tw-animate-css"; /* Keep if needed, remove if not */
+
+/* Apply Tailwind utility classes */
 @tailwind utilities;
 
-:root {
-  --background: #161515;
-  --foreground: #757576;
-}
-
-html{
-  scroll-behavior: smooth;
-}
-
+/* Define base theme variables for components (like Shadcn UI) */
+/* These map to the CSS variables defined below */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans); /* Keep your font setup */
+  --font-mono: var(--font-geist-mono); /* Keep your font setup */
+
+  /* Component Colors */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground); /* Added for text on destructive */
+
+  /* Borders and Rings */
+  --color-border: var(--border);
+  --color-input: var(--input); /* Input background */
+  --color-ring: var(--ring);   /* Focus rings */
+
+  /* Chart Colors (Keep or adjust as needed) */
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+
+  /* Radius variables (Control border radius) */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Sidebar colors (if using a sidebar component) */
+  /* Adjusted for dark theme */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #133E87;
-    --foreground: #131212;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-@import "tailwindcss";
-
+/* Define custom animation if needed */
 @theme inline {
   --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
 
@@ -40,5 +68,92 @@ body {
     to {
       transform: translate(calc(-50% - 0.5rem));
     }
+  }
+}
+
+/* --- Dark Theme Color Variables (Applied by default) --- */
+:root {
+  --radius: 0.625rem; /* Your preferred border radius */
+
+  /* Base Backgrounds & Text */
+  /* Using a very dark blue close to your gradient, or pure black like About section */
+  --background: 222.2 84% 4.9%; /* ~= hsl(222, 84%, 5%) or #030712 - Very Dark Blue */
+  /* --background: 0 0% 0%; */     /* Pure Black like About section */
+  --foreground: 60 80% 91.2%; /* ~= #F3F3E0 - Your Cream/Off-white text */
+
+  /* Cards & Popovers */
+  /* Slightly lighter than background, or a dark blue/teal */
+  --card: 222.2 84% 6.9%; /* ~= hsl(222, 84%, 7%) - Slightly lighter dark blue */
+  --card-foreground: 60 80% 91.2%; /* ~= #F3F3E0 */
+  --popover: 222.2 84% 6.9%;
+  --popover-foreground: 60 80% 91.2%;
+
+  /* Primary Interactive Elements (Matches your primary button) */
+  --primary: 60 80% 91.2%; /* ~= #F3F3E0 - Cream background for primary actions */
+  --primary-foreground: 222.2 84% 14.9%; /* ~= hsl(222, 84%, 15%) or blue-900 - Dark text on primary */
+
+  /* Secondary Elements (e.g., secondary buttons bg/text) */
+  /* Using a dark blue/gray */
+  --secondary: 217.2 32.6% 17.5%; /* ~= hsl(217, 33%, 18%) - Dark Slate Blue/Gray */
+  --secondary-foreground: 60 80% 91.2%; /* ~= #F3F3E0 - Cream text */
+
+  /* Muted Elements (Subtle backgrounds or text) */
+  --muted: 217.2 32.6% 17.5%; /* Same as secondary */
+  --muted-foreground: 215 20.2% 65.1%; /* ~= hsl(215, 20%, 65%) - Lighter Gray */
+
+  /* Accent Colors (Matches your caption/accent color) */
+  --accent: 260.7 100% 54.7%; /* ~= #6919ff - Your Purple Accent */
+  --accent-foreground: 60 80% 91.2%; /* ~= #F3F3E0 - Cream text on accent */
+
+  /* Destructive Actions */
+  --destructive: 0 62.8% 30.6%; /* Darker Red */
+  --destructive-foreground: 60 80% 91.2%; /* Cream text */
+
+  /* Borders & Inputs */
+  /* Using the cream color for standout borders like your secondary button */
+  --border: 60 80% 91.2%; /* ~= #F3F3E0 */
+  /* Or a subtle dark border: --border: 217.2 32.6% 17.5%; */
+  --input: 217.2 32.6% 17.5%; /* Dark background for inputs */
+  --ring: 60 80% 91.2%; /* Cream focus ring */
+  /* Or a more standard blue: --ring: 217.2 91.2% 59.8%; */
+
+  /* Chart Colors (Adjust if needed to fit dark theme) */
+  --chart-1: 260.7 100% 54.7%; /* Purple */
+  --chart-2: 142.1 70.6% 45.3%; /* Green */
+  --chart-3: 215.2 79.8% 58.8%; /* Blue */
+  --chart-4: 48 90.5% 50%;   /* Yellow */
+  --chart-5: 346.8 77.2% 49.8%; /* Red */
+
+  /* Sidebar */
+  --sidebar: 222.2 84% 6.9%; /* Same as card */
+  --sidebar-foreground: 60 80% 91.2%; /* Cream text */
+  --sidebar-primary: 260.7 100% 54.7%; /* Purple */
+  --sidebar-primary-foreground: 60 80% 91.2%; /* Cream */
+  --sidebar-accent: 217.2 32.6% 17.5%; /* Dark Slate */
+  --sidebar-accent-foreground: 60 80% 91.2%; /* Cream */
+  --sidebar-border: 217.2 32.6% 17.5%; /* Dark Slate Border */
+  --sidebar-ring: 60 80% 91.2%; /* Cream Ring */
+}
+
+/* --- Base Styles Layer --- */
+@layer base {
+  /* Apply smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    /* Consider adding dark class here if you ever implement a toggle */
+    /* class: 'dark'; */
+  }
+
+  /* Apply default border color and focus ring styling */
+  * {
+    @apply border-border outline-ring/50; /* Use the defined border/ring variables */
+  }
+
+  /* Apply default background and text color to the body */
+  body {
+    @apply bg-background text-foreground; /* Use the defined background/foreground variables */
+    /* Add font smoothing for better text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
