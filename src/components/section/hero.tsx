@@ -26,7 +26,7 @@ const Hero = () => {
                         </Button>
                         <Button
                         as="a"
-                        href="/Akash_Resume_SDE.pdf"
+                        href="/AKASH_SDE.pdf"
                         background="primary"
                         size="large"
                         download
