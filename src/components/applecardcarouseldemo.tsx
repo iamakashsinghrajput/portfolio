@@ -402,12 +402,38 @@ const DummyContent8 = () => {
               </span>{" "}
               an innovative car booking platform designed to provide a seamless and 
               hassle-free experience for users looking to rent vehicles. 
-              Built using Next.js, Tailwind CSS, and HTML, this project showcases 
+              Built using Next.js, Tailwind CSS, HTML, MongoDB this project showcases 
               my ability to create dynamic, responsive, and user-friendly web applications.
             </p>
             <br/>
             <br/>
-            <h1 className="pl-6 text-5xl text-white font-bold">COMING SOON</h1>
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+              Key Features & Contributions:
+              </span>{<br/>}
+               - Developed a responsive car showcase platform using Next.js, Tailwind CSS, and TypeScript, enabling smooth and dynamic display of vehicle
+               images across multiple devices.
+               <br/>
+               - Implemented optimized image rendering and smooth transitions for 360-degree car views, enhancing user experience and interactivity
+               <br/>
+               - Integrated static image sequences into a seamless visual flow, using conditional frame rendering and keyboard navigation to simulate rotation
+               and depth.
+               <br/>
+               - Launched PrimeDrive with automated car comparison features, utilizing machine learning algorithms to recommend vehicles based on user
+               preferences, boosting engagement by 35%.
+            </p>
+            <br/>
+            <br/>
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200">
+                Link:
+              </span>
+              <br/>
+              <br/>
+              <a href="https://prime-drivee.vercel.app">PrimeDrive 2.0</a>
+            </p>
+            <br/>
+            <br/>
           </div>
         );
       })}
@@ -446,7 +472,7 @@ const data = [
   },
   {
     category: "PrimeDrive 2.0",
-    title: "LAUNCHING SOON.",
+    title: "Your Premium Ride",
     // src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     src : Primedrive2,
     content: <DummyContent8 />,
