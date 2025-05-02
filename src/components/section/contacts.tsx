@@ -205,7 +205,7 @@ const ContactSection = () => {
                                 )}
                                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-3">
                                     <a
-                                        href="mailto:hello@lokkeestudios.com"
+                                        href="mailto:akash21052000singh@gmail.com"
                                         className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors text-sm group"
                                      >
                                          <IconMail size={18} className="group-hover:text-[#6919ff] transition-colors" />
