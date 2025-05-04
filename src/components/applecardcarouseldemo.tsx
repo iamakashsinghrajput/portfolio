@@ -233,7 +233,7 @@ export function AppleCardsCarouselDemo() {
     ));
 
     return (
-        <div className="w-full bg-[#000000] py-10 md:py-16">
+        <div className="w-full bg-[#000000] py-3 md:py-8">
             <Carousel items={cards} />
         </div>
     );

@@ -192,7 +192,7 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-50 overflow-auto">
+          <div className="fixed inset-0 h-screen z-50 overflow-auto mt-16">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -213,7 +213,7 @@ export const Card = ({
             >
               <button
                 aria-label="Close card details"
-                className="sticky top-4 h-8 w-8 right-4 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center z-10" // Ensure button is above content flow
+                className="sticky top-4 h-8 w-8 right-4 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center z-10"
                 onClick={handleClose}
               >
                 <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />

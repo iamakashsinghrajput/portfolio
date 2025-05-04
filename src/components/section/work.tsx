@@ -34,7 +34,7 @@ const Work = () => {
     <motion.section
       id="work"
       aria-labelledby="work-heading"
-      className="h-full py-20 relative z-20 w-full lg:border-t-0.5 lg:border-neutrals-600 lg:before:hidden lg:after:hidden overflow-hidden" // Added overflow-hidden
+      className="h-full py-20 relative z-20 w-full lg:border-t-0.5 lg:border-neutrals-600 lg:before:hidden lg:after:hidden overflow-hidden"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible" 
@@ -42,7 +42,7 @@ const Work = () => {
     >
       <Container className=''>
         <motion.div
-          className="bg-black flex flex-col items-center text-center mb-10 md:mb-16"
+          className="bg-black flex flex-col items-center text-center mb-3 md:mb-4"
         >
           <motion.div variants={itemVariants}>
             <Caption id="work-heading" className='text-[#6919ff]'>
@@ -51,7 +51,7 @@ const Work = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <Heading className='text-white text-center mt-2'>
+            <Heading className='text-white text-center mt-6'>
               Dig into my universe
             </Heading>
           </motion.div>
