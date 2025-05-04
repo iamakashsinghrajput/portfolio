@@ -192,7 +192,7 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-50 overflow-auto mt-16">
+          <div className="fixed inset-0 h-screen z-50 mt-10 overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -242,7 +242,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="group rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10 cursor-pointer"
+        className="group rounded-3xl md:rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10 cursor-pointer"
         aria-label={`View details for ${card.title}`}
       >
         <div
@@ -251,7 +251,7 @@ export const Card = ({
             "bg-black/60 backdrop-blur-md",
             "flex flex-col items-start justify-end",
             "opacity-0 group-hover:opacity-100",
-            "transition-opacity duration-300 ease-in-out pointer-events-none" 
+            "transition-opacity duration-300 ease-in-out pointer-events-none rounded-3xl" 
           )}
           aria-hidden="true"
         >
@@ -273,7 +273,7 @@ export const Card = ({
           src={card.src}
           alt={card.title}
           fill
-          className="object-cover absolute z-10 inset-0"
+          className="object-cover rounded-3xl absolute z-10 inset-0"
         />
       </motion.button>
     </>
