@@ -218,17 +218,17 @@ export const Card = ({
               >
                 <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
               </button>
-              <div className="relative mt-[-2rem]">
+              <div className="relative">
                 <motion.p
                   layoutId={layout ? `category-${card.title}` : undefined}
-                  className="text-base font-medium text-black dark:text-white"
+                  className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-2"
                 >
                   {card.category}
                 </motion.p>
                 <motion.p
                   id={layout ? `title-${card.title}` : undefined}
                   layoutId={layout ? `title-${card.title}` : undefined}
-                  className="text-2xl md:text-5xl font-semibold text-neutral-700 mt-4 dark:text-white"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 dark:text-neutral-50 mb-6 leading-tight"
                 >
                   {card.title}
                 </motion.p>
