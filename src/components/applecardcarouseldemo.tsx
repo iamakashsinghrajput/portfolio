@@ -9,7 +9,7 @@ import WeatherAsset from "@/src/assets/weather.png"; // Renamed to avoid conflic
 import Detective from "@/src/assets/detectivedev.png";
 import tictactoe from "@/src/assets/tictactoe.png";
 import ThyleadsAsset from "@/src/assets/Thyleads.png"; // Renamed
-import TechscholarsAsset from "@/src/assets/Techscholars.png"; // Renamed
+import TechscholarsAsset from "@/src/assets/techscholarshero.png"; // Renamed
 import DribbleAsset from "@/src/assets/dribble.png"; // Renamed
 import Primedrive2Asset from "@/src/assets/PrimeDrive2.0.png"; // Renamed
 
@@ -28,6 +28,11 @@ import DribbleProfile from "@/src/assets/dribbleProfile.png";
 import Detectivedev from "@/src/assets/detectivedevhomepage.png";
 import DetectivedevUI from "@/src/assets/detectivedevUI.png";
 import DetectivedevLight from "@/src/assets/detectivedevlight.png";
+
+import TechscholarsHome from "@/src/assets/techscholarshome.png";
+import TechscholarsContact from "@/src/assets/techscholarscontact.png";
+import TechscholarsServices from "@/src/assets/techscholarsservices.png";
+import TechscholarsWork from "@/src/assets/techscholarswork.png";
 
 import WeatherappHome from "@/src/assets/WeatherappHome.png";
 import Weatherappsearch from "@/src/assets/Weathersearch.png";
@@ -87,9 +92,10 @@ const WeatherAppFeature1Placeholder = WeatherappHome;
 const WeatherAppFeature2Placeholder = Weatherappsearch;
 
 // Techscholars Feature Placeholders
-const TechscholarsFeature1Placeholder = TechscholarsAsset;
-const TechscholarsFeature2Placeholder = TechscholarsAsset; // Placeholder
-const TechscholarsFeature3Placeholder = TechscholarsAsset; // Placeholder
+const TechscholarsFeature1Placeholder = TechscholarsHome;
+const TechscholarsFeature2Placeholder = TechscholarsContact;
+const TechscholarsFeature3Placeholder = TechscholarsServices;
+const TechscholarsFeature4Placeholder = TechscholarsWork;
 
 // Tic Tac Toe Feature Placeholders
 const TicTacToeFeature1Placeholder = TictactoeHome;
@@ -216,27 +222,35 @@ const weatherAppFeatures: PrimeDriveFeatureItem[] = [
 // --- Data for Techscholars Features ---
 const techscholarsFeatures: PrimeDriveFeatureItem[] = [
   {
-    id: "techscholars-dashboard",
-    title: "Optimized Student Dashboard",
-    description: "A user-friendly dashboard for students, providing easy access to courses, progress, and resources.",
+    id: "techscholars-home",
+    title: "Smart & Intuitive Homepage",
+    description: "Welcome users with a sleek, informative homepage highlighting key features, mission, and access points of TechScholars.",
     imageSrc: TechscholarsFeature1Placeholder,
-    imageAlt: "Techscholars Student Dashboard"
+    imageAlt: "Techscholars Home Page"
   },
   {
-    id: "techscholars-admin",
-    title: "Comprehensive Admin Panel",
-    description: "An extensive admin panel for managing users, courses, and platform settings with efficiency.",
-    imageSrc: TechscholarsFeature2Placeholder,
-    imageAlt: "Techscholars Admin Panel"
+    id: "techscholars-services",
+    title: "Dynamic Learning Services",
+    description: "Explore a variety of tech-powered educational services designed to enhance digital learning for students and institutions.",
+    imageSrc: TechscholarsFeature4Placeholder,
+    imageAlt: "Techscholars Services Section"
   },
   {
-    id: "techscholars-auth",
-    title: "Secure User Authentication",
-    description: "Robust authentication system ensuring secure access for students and administrators.",
+    id: "techscholars-work",
+    title: "Projects & Case Studies",
+    description: "Showcase of impactful projects, student work, and real-world case studies built through the TechScholars platform.",
     imageSrc: TechscholarsFeature3Placeholder,
-    imageAlt: "Techscholars Authentication System"
+    imageAlt: "Techscholars Work and Projects"
+  },
+  {
+    id: "techscholars-contact",
+    title: "Quick Contact & Support",
+    description: "Easily connect with the TechScholars team for inquiries, support, or collaboration opportunities.",
+    imageSrc: TechscholarsFeature2Placeholder,
+    imageAlt: "Techscholars Contact Page"
   },
 ];
+
 
 
 // --- Data for Tic Tac Toe Features ---
@@ -424,6 +438,25 @@ const projects: ProjectData[] = [
     },
   },
   {
+    category: "Techscholars",
+    title: "EdTech Platform Development",
+    src: TechscholarsAsset,
+    contentData: {
+      titleHighlight: "As a Software Developer (Next.js) at Techscholars,",
+      introduction: "I designed and developed user-friendly, high-performance web applications using Next.js, and Tailwind CSS, collaborating with clients to transform requirements into technical implementations.",
+      contributions: [
+        "Designed and developed a visually engaging and informative Home page to clearly present TechScholars' mission, services, and platform value",
+        "Built the Work page to feature real-world projects and student outcomes, integrating animations and performance-optimized layouts.",
+        "Created a responsive and accessible Contact page with integrated form handling for inquiries and collaboration opportunities.",
+        "Integrated backend APIs to enable real-time data handling across all site sections.",
+        "Crafted responsive UI components using Tailwind CSS and Shadcn UI, ensuring cross-device compatibility and consistency.",
+      ],
+      projectUrl: "https://techscholars.vercel.app/",
+      projectLinkText: "Visit Techscholars",
+      features: techscholarsFeatures,
+    },
+  },
+  {
     category: "Detective Dev",
     title: "GitHub Developer Search",
     src: Detective,
@@ -457,25 +490,6 @@ const projects: ProjectData[] = [
       projectUrl: "https://weather-githhub-io.vercel.app/",
       projectLinkText: "Check the Weather App",
       features: weatherAppFeatures,
-    },
-  },
-  {
-    category: "Techscholars",
-    title: "EdTech Platform Development",
-    src: TechscholarsAsset,
-    contentData: {
-      titleHighlight: "As a Software Developer (Next.js) at Techscholars,",
-      introduction: "I designed and developed user-friendly, high-performance web applications using React.js, Next.js, and Tailwind CSS, collaborating with clients to transform requirements into technical implementations.",
-      contributions: [
-        "Developed and optimized the student dashboard, admin panel, and user authentication system.",
-        "Integrated backend APIs to ensure smooth data flow and efficient application performance.",
-        "Implemented SSR and CSR using Next.js for better SEO and performance.",
-        "Designed responsive UI components with Tailwind CSS and Shadcn.",
-        "Ensured cross-device compatibility for a seamless experience.",
-      ],
-      projectUrl: "https://techscholars.co.in",
-      projectLinkText: "Visit Techscholars",
-      features: techscholarsFeatures,
     },
   },
   {

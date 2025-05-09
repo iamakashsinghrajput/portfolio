@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Akash Studio",
   description: "Full Stack Developer",
+  icons: 'favicon.ico'
 };
 
 export default function RootLayout({
