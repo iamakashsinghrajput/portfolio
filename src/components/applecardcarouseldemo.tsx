@@ -11,7 +11,7 @@ import tictactoe from "@/src/assets/tictactoe.png";
 import ThyleadsAsset from "@/src/assets/Thyleads.png"; // Renamed
 import TechscholarsAsset from "@/src/assets/techscholarshero.png"; // Renamed
 import DribbleAsset from "@/src/assets/dribble.png"; // Renamed
-import Primedrive2Asset from "@/src/assets/PrimeDrive2.0.png"; // Renamed
+import Primedrive2Asset from "@/src/assets/PrimeDrive2.0.png";
 
 import ThyleadsHome from "@/src/assets/ThyleadsHome.png";
 import ThyleadsLead from "@/src/assets/Thyleadslead.png";
@@ -20,6 +20,12 @@ import LoginPage from "@/src/assets/loginpage.png";
 import HomeScreen from "@/src/assets/HomePage.png";
 import CarShow from "@/src/assets/Carshow.png";
 import PaymentPage from "@/src/assets/Paymentpage.png";
+
+import DishWishLogin from "@/src/assets/dishwishlogin.png";
+import DishWishHome from "@/src/assets/dishwishHome.png";
+import DishWishDashboard from "@/src/assets/dishwishdashboard.png";
+import DishWishRecipe from "@/src/assets/dishwishRecipe.png";
+import DishWishAsset from "@/src/assets/dishwishasset.png";
 
 import DribbleLogin from "@/src/assets/dribbleLogin.png";
 import DribbleHome from "@/src/assets/dribbleHome.png";
@@ -147,6 +153,39 @@ const thyleadsFeatures: PrimeDriveFeatureItem[] = [
     description: "An intuitive interface for managing and tracking leads, ensuring sales teams can efficiently follow up and convert prospects.",
     imageSrc: ThyleadsFeature2Placeholder,
     imageAlt: "Thyleads Lead Management Dashboard"
+  },
+];
+
+//date for DishWish
+
+const dishwishFeatures: PrimeDriveFeatureItem[] = [
+  {
+    id: "Homepage",
+    title: "Delightful & Functional Landing Page",
+    description: "A welcoming homepage that introduces users to the Dishwish experience — highlighting features like recipe generation, personalization, and ease of use.",
+    imageSrc: DishWishHome,
+    imageAlt: "Dishwish Landing Page"
+  },
+  {
+    id: "LoginPage",
+    title: "Secure & Seamless Login",
+    description: "Provides users with a smooth, secure login experience, including form validation and authentication feedback.",
+    imageSrc: DishWishLogin,
+    imageAlt: "Dishwish Login Page"
+  },
+  {
+    id: "GenerateRecipePage",
+    title: "AI-Powered Recipe Generator",
+    description: "Empowers users to generate custom recipes using AI, based on selected ingredients, dietary preferences, or available items.",
+    imageSrc: DishWishRecipe,
+    imageAlt: "Dishwish Recipe Generator"
+  },
+  {
+    id: "Dashboard",
+    title: "Personalized User Dashboard",
+    description: "Displays saved recipes, generation history, and user preferences in a clean, responsive interface.",
+    imageSrc: DishWishDashboard,
+    imageAlt: "Dishwish User Dashboard"
   },
 ];
 
@@ -416,27 +455,30 @@ const projects: ProjectData[] = [
       ],
       projectUrl: "https://prime-drivee.vercel.app",
       projectLinkText: "Explore PrimeDrive 2.0",
-      features: primeDrive2ProjectFeatures, // Uses the existing detailed features
+      features: primeDrive2ProjectFeatures,
     },
   },
+
   {
-    category: "Dribble 2.0",
-    title: "Modern Design Platform Clone",
-    src: DribbleAsset,
+    category: "Dishwish",
+    title: "AI Recipe Generator Platform",
+    src: DishWishAsset,
     contentData: {
-      titleHighlight: "I created Dribble 2.0,",
-      introduction: "a modern redesign and functional clone of Dribbble, crafted to showcase curated design content. Built using Tailwind CSS, Next.js, and MongoDB, this project reflects skills in modern frontend/backend architecture and responsive UI.",
+      titleHighlight: "As a Full Stack Developer for Dishwish,",
+      introduction: "I engineered an AI-based recipe generation web app using Next.js and Tailwind CSS, enabling users to generate personalized meal ideas with an intuitive UI and seamless user experience.",
       contributions: [
-        "Engineered a clean and intuitive interface using Next.js and Tailwind CSS, mimicking Dribbble with a custom aesthetic.",
-        "Developed a dynamic gallery layout for effortless browsing of design inspirations.",
-        "Integrated category-based filtering and hover interactions to enhance user engagement.",
-        "Deployed with Vercel for optimal performance and seamless hosting.",
+        "Developed a polished and informative Homepage that clearly explains the app's functionality and value proposition.",
+        "Implemented a secure Login page with form validation and integration with authentication providers.",
+        "Built the Generate Recipe page leveraging OpenAI's API to craft real-time recipe suggestions based on user input.",
+        "Designed and implemented a dynamic Dashboard to track generated recipes and user preferences.",
+        "Used Tailwind CSS and Shadcn UI to create reusable, responsive components ensuring consistency across the platform.",
       ],
-      projectUrl: "https://dribble-2-0.vercel.app",
-      projectLinkText: "View Dribble 2.0",
-      features: dribbleFeatures,
+      projectUrl: "https://dish-wish.vercel.app/",
+      projectLinkText: "Visit Dishwish",
+      features: dishwishFeatures,
     },
   },
+
   {
     category: "Techscholars",
     title: "EdTech Platform Development",
@@ -454,6 +496,25 @@ const projects: ProjectData[] = [
       projectUrl: "https://techscholars.vercel.app/",
       projectLinkText: "Visit Techscholars",
       features: techscholarsFeatures,
+    },
+  },
+
+  {
+    category: "Dribble 2.0",
+    title: "Modern Design Platform Clone",
+    src: DribbleAsset,
+    contentData: {
+      titleHighlight: "I created Dribble 2.0,",
+      introduction: "a modern redesign and functional clone of Dribbble, crafted to showcase curated design content. Built using Tailwind CSS, Next.js, and MongoDB, this project reflects skills in modern frontend/backend architecture and responsive UI.",
+      contributions: [
+        "Engineered a clean and intuitive interface using Next.js and Tailwind CSS, mimicking Dribbble with a custom aesthetic.",
+        "Developed a dynamic gallery layout for effortless browsing of design inspirations.",
+        "Integrated category-based filtering and hover interactions to enhance user engagement.",
+        "Deployed with Vercel for optimal performance and seamless hosting.",
+      ],
+      projectUrl: "https://dribble-2-0.vercel.app",
+      projectLinkText: "View Dribble 2.0",
+      features: dribbleFeatures,
     },
   },
   {
