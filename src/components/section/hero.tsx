@@ -76,7 +76,7 @@ const Hero = () => {
 
             <Button
               as="a"
-              href="/AKASH_SDE.pdf"
+              href="/AkashSingh_SDE.pdf"
               size="large"
               download
               className={`
