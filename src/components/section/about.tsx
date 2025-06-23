@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 import heroimg from '@/src/assets/about.png';
 import { Caption, Paragraph } from '@/src/components/ui/typography';
 import Image from 'next/image';
@@ -13,15 +13,14 @@ const imageVariants = {
     x: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeOut',
+      ease: easeOut,
     },
   },
 };
 
-
 const textItemVariants = {
    hidden: { opacity: 0, y: 20 },
-   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
+   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } }
 }
 
 const About = () => {
@@ -50,7 +49,7 @@ const About = () => {
         </motion.div>
 
         <motion.div
-          className="w-full px-6 py-16 sm:px-10 sm:py-20 lg:w-1/2 lg:py-28 lg:ps-10 xl:ps-20 flex flex-col justify-center"
+          className="w-full px-6 py-16 sm:px-10 sm:py-20 lg:w-1/2 lg:py-28 lg:pl-10 xl:pl-20 flex flex-col justify-center"
         >
            <motion.div variants={textItemVariants}>
               <Caption id="about-heading" className="text-[#6919ff] mb-4 inline-block">
