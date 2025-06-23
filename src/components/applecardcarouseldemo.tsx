@@ -21,7 +21,7 @@ import CarShow from "@/src/assets/Carshow.png";
 import PaymentPage from "@/src/assets/Paymentpage.png";
 
 import DishWishLogin from "@/src/assets/dishwishlogin.png";
-import DishWishHome from "@/src/assets/DishwishHome.png";
+import DishWishHome from "@/src/assets/dishwishhome.png";
 import DishWishDashboard from "@/src/assets/dishwishdashboard.png";
 import DishWishRecipe from "@/src/assets/dishwishRecipe.png";
 import DishWishAsset from "@/src/assets/dishwishasset.png";
