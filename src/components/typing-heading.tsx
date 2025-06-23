@@ -10,12 +10,20 @@ const deleteSpeed = 0.1;
 const delayBeforeDelete = 1.1;
 
 const headingVariants: Variants = {
+  enter: {
+    opacity: 0,
+    y: -10,
+  },
   visible: {
+    opacity: 1,
+    y: 0,
     transition: {
       staggerChildren: typingSpeed,
     },
   },
   exit: {
+    opacity: 0,
+    y: -10,
     transition: {
       staggerChildren: deleteSpeed,
       staggerDirection: -1,
@@ -34,7 +42,7 @@ const letterVariants: Variants = {
     opacity: 0,
     y: -30,
     x: 30,
-    skew: 10,
+    skewX: 10,
     rotateZ: 25,
     scale: 1.5,
     filter: 'blur(10px)',

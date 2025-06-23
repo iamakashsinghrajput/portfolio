@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 import { Container } from '@/src/components/ui/container';
 import { Caption, Heading } from '@/src/components/ui/typography';
-import { AppleCardsCarouselDemo } from '../applecardcarouseldemo';
+import { AppleCardsCarouselDemo } from '@/src/components/applecardcarouseldemo';
 
 const sectionVariants = {
   hidden: { opacity: 0 },
@@ -23,7 +23,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };
@@ -64,9 +64,10 @@ const Work = () => {
 
       <div className="h-16" />
 
-      <motion.hr
+      <motion.div
         className="h-px border-0 bg-gradient-to-r from-transparent via-[#807f8076] to-transparent"
         variants={itemVariants}
+        aria-hidden="true"
       />
     </motion.section>
   )
