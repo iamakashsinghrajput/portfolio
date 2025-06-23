@@ -4,13 +4,12 @@ import Image, { StaticImageData } from "next/image";
 
 import { Carousel, Card } from "@/src/components/ui/apple-cards-carousel";
 
-// Existing Asset Imports
-import WeatherAsset from "@/src/assets/weather.png"; // Renamed to avoid conflict with Weather component name
+import WeatherAsset from "@/src/assets/weather.png";
 import Detective from "@/src/assets/detectivedev.png";
 import tictactoe from "@/src/assets/tictactoe.png";
-import ThyleadsAsset from "@/src/assets/Thyleads.png"; // Renamed
-import TechscholarsAsset from "@/src/assets/techscholarshero.png"; // Renamed
-import DribbleAsset from "@/src/assets/dribble.png"; // Renamed
+import ThyleadsAsset from "@/src/assets/Thyleads.png";
+import TechscholarsAsset from "@/src/assets/techscholarshero.png";
+import DribbleAsset from "@/src/assets/dribble.png";
 import Primedrive2Asset from "@/src/assets/PrimeDrive2.0.png";
 
 import ThyleadsHome from "@/src/assets/ThyleadsHome.png";
@@ -22,7 +21,7 @@ import CarShow from "@/src/assets/Carshow.png";
 import PaymentPage from "@/src/assets/Paymentpage.png";
 
 import DishWishLogin from "@/src/assets/dishwishlogin.png";
-import DishWishHome from "@/src/assets/dishwishHome.png";
+import DishWishHome from "@/src/assets/DishwishHome.png";
 import DishWishDashboard from "@/src/assets/dishwishdashboard.png";
 import DishWishRecipe from "@/src/assets/dishwishRecipe.png";
 import DishWishAsset from "@/src/assets/dishwishasset.png";
@@ -40,13 +39,18 @@ import TechscholarsContact from "@/src/assets/techscholarscontact.png";
 import TechscholarsServices from "@/src/assets/techscholarsservices.png";
 import TechscholarsWork from "@/src/assets/techscholarswork.png";
 
+import VisionDriveHome from "@/src/assets/visiondriveHome.png";
+import VisionDriveLogin from "@/src/assets/visiondriveLogin.png";
+import VisionDriveFleet from "@/src/assets/visiondriveFleet.png";
+import VisionDrivePayment from "@/src/assets/visiondrivePayment.png";
+import VisionDriveAsset from "@/src/assets/visiondriveAsset.png";
+
 import WeatherappHome from "@/src/assets/WeatherappHome.png";
 import Weatherappsearch from "@/src/assets/Weathersearch.png";
 
 import TictactoeHome from "@/src/assets/TictactoeHomepage.png";
 import TictactoeGame from "@/src/assets/Tictaktoegameexp.png";
 
-// --- Interface Definitions ---
 interface ProjectDetailsCoreProps {
   titleHighlight: string;
   introduction: string;
@@ -63,7 +67,6 @@ interface PrimeDriveFeatureItem {
   imageAlt: string;
 }
 
-// Extended content data to include features for all projects
 interface ProjectFeatureShowcaseData extends ProjectDetailsCoreProps {
   features: PrimeDriveFeatureItem[];
 }
@@ -72,42 +75,32 @@ interface ProjectData {
   category: string;
   title: string;
   src: StaticImageData | string;
-  contentData: ProjectFeatureShowcaseData; // Updated to use the new interface
+  contentData: ProjectFeatureShowcaseData;
 }
 
 
-// --- Placeholder Images for Project Features ---
-// IMPORTANT: Replace these with actual paths to your feature images for each project
+const ThyleadsFeature1Placeholder = ThyleadsHome;
+const ThyleadsFeature2Placeholder = ThyleadsLead;
 
-// Thyleads Feature Placeholders
-const ThyleadsFeature1Placeholder = ThyleadsHome; // Placeholder
-const ThyleadsFeature2Placeholder = ThyleadsLead; // Placeholder
-
-// Dribble 2.0 Feature Placeholders
 const DribbleFeature1Placeholder = DribbleLogin;
 const DribbleFeature2Placeholder = DribbleHome;
-const DribbleFeature3Placeholder = DribbleProfile; // Placeholder
+const DribbleFeature3Placeholder = DribbleProfile;
 
-// Detective Dev Feature Placeholders
 const DetectiveDevFeature1Placeholder = Detectivedev;
 const DetectiveDevFeature2Placeholder = DetectivedevUI;
 const DetectiveDevFeature3Placeholder = DetectivedevLight;
 
-// Weather App Feature Placeholders
 const WeatherAppFeature1Placeholder = WeatherappHome;
 const WeatherAppFeature2Placeholder = Weatherappsearch;
 
-// Techscholars Feature Placeholders
 const TechscholarsFeature1Placeholder = TechscholarsHome;
 const TechscholarsFeature2Placeholder = TechscholarsContact;
 const TechscholarsFeature3Placeholder = TechscholarsServices;
 const TechscholarsFeature4Placeholder = TechscholarsWork;
 
-// Tic Tac Toe Feature Placeholders
 const TicTacToeFeature1Placeholder = TictactoeHome;
-const TicTacToeFeature2Placeholder = TictactoeGame; // Reusing, ideally distinct
+const TicTacToeFeature2Placeholder = TictactoeGame;
 
-// --- Data for PrimeDrive 2.0 Features (Existing) ---
 const primeDrive2ProjectFeatures: PrimeDriveFeatureItem[] = [
   {
     id: "primedrive2-login",
@@ -155,6 +148,40 @@ const thyleadsFeatures: PrimeDriveFeatureItem[] = [
     imageAlt: "Thyleads Lead Management Dashboard"
   },
 ];
+
+//data for VisionDrive
+
+const VisionDriveFeature: PrimeDriveFeatureItem[] = [
+  {
+    id: "VisionDriveLogin",
+    title: "Seamless & Secure Login",
+    description: "Experience a hassle-free and secure entry into VisionDrive. Our intuitive login process gets you started in moments, ensuring your access is protected.",
+    imageSrc: VisionDriveLogin,
+    imageAlt: "VisionDrive Login Page Screenshot"
+  },
+  {
+    id: "VisionDriveHome",
+    title: "Intuitive Home Screen",
+    description: "Discover your next premium ride with our elegantly designed home screen. Easily navigate through featured vehicles, new arrivals, and personalized recommendations.",
+    imageSrc: VisionDriveHome,
+    imageAlt: "VisionDrive Home Screen Screenshot"
+  },
+  {
+    id: "VisionDriveFleet",
+    title: "Immersive Car Showcase",
+    description: "Explore vehicles like never before. Our car show page offers stunning visuals, 360-degree views, and detailed specifications for an informed choice.",
+    imageSrc: VisionDriveFleet,
+    imageAlt: "VisionDrive Car Show Page Screenshot"
+  },
+  {
+    id: "VisionDrivePayment",
+    title: "Streamlined Payment Process",
+    description: "Finalize your premium ride selection with a transparent and secure payment system. Multiple options and clear steps make the transaction smooth and trustworthy.",
+    imageSrc: VisionDrivePayment,
+    imageAlt: "VisionDrive Payment Page Screenshot"
+  },
+];
+
 
 //date for DishWish
 
@@ -311,9 +338,6 @@ const ticTacToeFeatures: PrimeDriveFeatureItem[] = [
 ];
 
 
-// --- Reusable Component for Project Feature Showcase (Modified from PrimeDriveFeatureShowcase) ---
-// This component is now generic enough to be used by all projects.
-// Name changed for clarity, but it's essentially the same PrimeDriveFeatureShowcase.
 const ProjectFeatureShowcase: React.FC<ProjectFeatureShowcaseData> = ({
   titleHighlight,
   introduction,
@@ -440,22 +464,24 @@ const projects: ProjectData[] = [
       features: thyleadsFeatures,
     },
   },
+
   {
-    category: "PrimeDrive 2.0",
-    title: "Your Premium Ride Showcase",
-    src: Primedrive2Asset,
+    category: "VisionDrive",
+    title: "Drive your Dream",
+    src: VisionDriveAsset,
     contentData: {
-      titleHighlight: "I developed PrimeDrive 2.0,",
+      titleHighlight: "I developed VisionDrive,",
       introduction: "an innovative car showcase platform designed to provide a seamless and visually engaging experience. Built using Next.js, Tailwind CSS, HTML, and MongoDB, this project showcases advanced frontend techniques and backend integration.",
       contributions: [
         "Developed a responsive car showcase platform using Next.js, Tailwind CSS, and TypeScript.",
         "Implemented optimized image rendering and smooth transitions for 360-degree car views, enhancing user experience.",
         "Integrated static image sequences into a seamless visual flow using conditional frame rendering and keyboard navigation.",
         "Launched automated car comparison features using machine learning concepts to recommend vehicles based on user preferences.",
+        "Integrated the Payment gateway for seamless transactions.",
       ],
-      projectUrl: "https://prime-drivee.vercel.app",
-      projectLinkText: "Explore PrimeDrive 2.0",
-      features: primeDrive2ProjectFeatures,
+      projectUrl: "https://vision-drive-nine.vercel.app/",
+      projectLinkText: "Explore VisionDrive",
+      features: VisionDriveFeature,
     },
   },
 
@@ -476,6 +502,25 @@ const projects: ProjectData[] = [
       projectUrl: "https://dish-wish.vercel.app/",
       projectLinkText: "Visit Dishwish",
       features: dishwishFeatures,
+    },
+  },
+
+  {
+    category: "PrimeDrive 2.0",
+    title: "Your Premium Ride Showcase",
+    src: Primedrive2Asset,
+    contentData: {
+      titleHighlight: "I developed PrimeDrive 2.0,",
+      introduction: "an innovative car showcase platform designed to provide a seamless and visually engaging experience. Built using Next.js, Tailwind CSS, HTML, and MongoDB, this project showcases advanced frontend techniques and backend integration.",
+      contributions: [
+        "Developed a responsive car showcase platform using Next.js, Tailwind CSS, and TypeScript.",
+        "Implemented optimized image rendering and smooth transitions for 360-degree car views, enhancing user experience.",
+        "Integrated static image sequences into a seamless visual flow using conditional frame rendering and keyboard navigation.",
+        "Launched automated car comparison features using machine learning concepts to recommend vehicles based on user preferences.",
+      ],
+      projectUrl: "https://prime-drivee.vercel.app",
+      projectLinkText: "Explore PrimeDrive 2.0",
+      features: primeDrive2ProjectFeatures,
     },
   },
 
