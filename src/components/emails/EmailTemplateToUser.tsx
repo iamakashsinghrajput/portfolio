@@ -1,11 +1,11 @@
 import * as React from 'react';
+import Image from 'next/image';
 
 interface EmailTemplateProps {
   name: string;
   userEmail: string;
   absoluteLogoUrl: string;
 }
-
 
 export const EmailTemplateToUser: React.FC<Readonly<EmailTemplateProps>> = ({
   name,
@@ -14,11 +14,11 @@ export const EmailTemplateToUser: React.FC<Readonly<EmailTemplateProps>> = ({
 }) => (
    <div style={{ fontFamily: 'Arial, sans-serif', color: '#333', padding: '20px', maxWidth: '600px', margin: 'auto', border: '1px solid #eee' }}>
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-            <img
+            <Image
                 src={absoluteLogoUrl}
                 alt="AKASH STUDIOS Logo"
-                width="80"
-                height="80"
+                width={80}
+                height={80}
                 style={{ display: 'inline-block' }}
             />
          </div>

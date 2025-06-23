@@ -19,7 +19,7 @@ function useScrollThreshold({ threshold = 10 }) {
     return () => {
       window.removeEventListener('scroll', updateScrollState);
     };
-  }, []);
+  }, [threshold]);
 
   return { isScrollThresholdPassed };
 }
