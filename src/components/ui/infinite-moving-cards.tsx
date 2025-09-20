@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { cn } from "@/src/lib/utils";
 import React, { useEffect, useState } from "react";
+import { IconUser } from "@tabler/icons-react";
 
 export const InfiniteMovingCards = ({
   items,
@@ -87,9 +87,12 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <li
-            className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 md:w-[450px] dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)] flex flex-col justify-between"
+            className="relative w-[350px] max-w-full shrink-0 rounded-2xl border-2 border-[#6919ff]/30 bg-gradient-to-br from-[#0a0118] via-[#1a0b2e] to-[#0a0118] px-8 py-6 md:w-[450px] flex flex-col justify-between backdrop-blur-sm shadow-lg hover:border-[#6919ff]/60 transition-all duration-300"
+            style={{
+              boxShadow: '0 8px 32px rgba(105, 25, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+            }}
             key={item.name}
           >
             <blockquote>
@@ -97,19 +100,22 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <span className="relative z-20 text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
-                {item.quote}
+              <span className="relative z-20 text-base leading-[1.6] font-normal text-white">
+                &ldquo;{item.quote}&rdquo;
               </span>
             </blockquote>
-            <div className="relative z-20 mt-6 flex flex-row items-center justify-between">
-              <span className="flex flex-col gap-1">
-                <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
+            <div className="relative z-20 mt-6 flex flex-row items-center gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-[#6919ff] to-[#8b5cf6] flex items-center justify-center shadow-lg border border-[#6919ff]/40">
+                <IconUser size={20} className="text-white" />
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="text-sm leading-[1.6] font-semibold text-white">
                   {item.name}
                 </span>
-                <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
+                <span className="text-sm leading-[1.6] font-normal text-neutral-300">
                   {item.title}
                 </span>
-              </span>
+              </div>
             </div>
           </li>
         ))}

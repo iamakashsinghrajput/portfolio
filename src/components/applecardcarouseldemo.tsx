@@ -45,6 +45,20 @@ import VisionDriveFleet from "@/src/assets/visiondriveFleet.png";
 import VisionDrivePayment from "@/src/assets/visiondrivePayment.png";
 import VisionDriveAsset from "@/src/assets/visiondriveAsset.png";
 
+// MyAnatomy.ai assets (placeholder paths - you'll need to add these images)
+import MyAnatomyAsset from "@/src/assets/myanatomy.png";
+import MyAnatomyHome from "@/src/assets/myanatomyhome.png";
+import MyAnatomyFeature2 from "@/src/assets/myanatomypsychometric.png";
+import MyAnatomyFeature3 from "@/src/assets/myanatomyproctoring.png";
+import MyAnatomyFeature4 from "@/src/assets/myanatomycampushiring.png";
+
+// Book Haven assets (placeholder paths - you'll need to add these images)
+import BookHavenAsset from "@/src/assets/bookhaven.png";
+import BookHavenHome from "@/src/assets/bookhavenhome.png";
+import BookHavenUpload from "@/src/assets/bookhavenpapers.png";
+import BookHavenDownload from "@/src/assets/bookhavensignin.png";
+import BookHavenRewards from "@/src/assets/bookhavenfeaturebooks.png";
+
 import WeatherappHome from "@/src/assets/WeatherappHome.png";
 import Weatherappsearch from "@/src/assets/Weathersearch.png";
 
@@ -337,6 +351,70 @@ const ticTacToeFeatures: PrimeDriveFeatureItem[] = [
   },
 ];
 
+// --- Data for MyAnatomy.ai Features ---
+const myAnatomyFeatures: PrimeDriveFeatureItem[] = [
+  {
+    id: "myanatomy-home",
+    title: "Comprehensive Learning Platform",
+    description: "An intuitive homepage that provides easy access to anatomical learning resources, interactive modules, and educational content.",
+    imageSrc: MyAnatomyHome,
+    imageAlt: "MyAnatomy.ai Homepage"
+  },
+  {
+    id: "myanatomy-interactive",
+    title: "Interactive Anatomy Models",
+    description: "3D interactive models and detailed anatomical structures that allow students to explore human anatomy in depth.",
+    imageSrc: MyAnatomyFeature2,
+    imageAlt: "MyAnatomy.ai Interactive Models"
+  },
+  {
+    id: "myanatomy-learning",
+    title: "Personalized Learning Experience",
+    description: "AI-powered learning paths that adapt to each student's progress and provide customized educational content.",
+    imageSrc: MyAnatomyFeature3,
+    imageAlt: "MyAnatomy.ai Learning Experience"
+  },
+  {
+    id: "myanatomy-assessment",
+    title: "Advanced Assessment Tools",
+    description: "Comprehensive testing and assessment features to track learning progress and identify areas for improvement.",
+    imageSrc: MyAnatomyFeature4,
+    imageAlt: "MyAnatomy.ai Assessment Tools"
+  },
+];
+
+// --- Data for Book Haven Features ---
+const bookHavenFeatures: PrimeDriveFeatureItem[] = [
+  {
+    id: "bookhaven-home",
+    title: "Student-Focused Platform",
+    description: "A welcoming homepage designed specifically for students to easily navigate between uploading and downloading question papers.",
+    imageSrc: BookHavenHome,
+    imageAlt: "Book Haven Homepage"
+  },
+  {
+    id: "bookhaven-upload",
+    title: "Easy Question Paper Upload",
+    description: "Intuitive upload system allowing students to contribute question papers and earn rewards for their contributions to the community.",
+    imageSrc: BookHavenUpload,
+    imageAlt: "Book Haven Upload Feature"
+  },
+  {
+    id: "bookhaven-download",
+    title: "Comprehensive Download Library",
+    description: "Extensive collection of question papers organized by subject, year, and institution for easy access and download.",
+    imageSrc: BookHavenDownload,
+    imageAlt: "Book Haven Download Library"
+  },
+  {
+    id: "bookhaven-rewards",
+    title: "Reward System",
+    description: "Gamified reward system that incentivizes students to contribute quality content while providing benefits for active participation.",
+    imageSrc: BookHavenRewards,
+    imageAlt: "Book Haven Rewards System"
+  },
+];
+
 
 const ProjectFeatureShowcase: React.FC<ProjectFeatureShowcaseData> = ({
   titleHighlight,
@@ -447,6 +525,25 @@ const PrimeDriveFeatureSection: React.FC<PrimeDriveFeatureSectionProps> = ({
 // --- Main Projects Data (Updated) ---
 const projects: ProjectData[] = [
   {
+    category: "MyAnatomy.ai",
+    title: "AI-Powered Anatomy Learning Platform",
+    src: MyAnatomyAsset,
+    contentData: {
+      titleHighlight: "I built MyAnatomy.ai,",
+      introduction: "a comprehensive AI-powered anatomy learning platform designed to revolutionize medical education. Built entirely by myself using modern web technologies, this platform provides interactive 3D models, personalized learning paths, and advanced assessment tools for medical students.",
+      contributions: [
+        "Developed the entire platform single-handedly using Next.js, React.js, and TypeScript for optimal performance.",
+        "Implemented AI-powered learning algorithms to provide personalized educational content based on student progress.",
+        "Created interactive 3D anatomy models using Three.js for immersive learning experiences.",
+        "Built comprehensive assessment and progress tracking systems to monitor student learning outcomes.",
+        "Designed responsive UI/UX with Tailwind CSS ensuring accessibility across all devices.",
+      ],
+      projectUrl: "https://myanatomy.ai",
+      projectLinkText: "Explore MyAnatomy.ai",
+      features: myAnatomyFeatures,
+    },
+  },
+  {
     category: "Thyleads",
     title: "B2B SAAS Leads Generation.",
     src: ThyleadsAsset,
@@ -462,6 +559,26 @@ const projects: ProjectData[] = [
       projectUrl: "https://thyleads.com",
       projectLinkText: "Visit Thyleads.com",
       features: thyleadsFeatures,
+    },
+  },
+
+  {
+    category: "Book Haven",
+    title: "Question Paper Sharing Platform",
+    src: BookHavenAsset,
+    contentData: {
+      titleHighlight: "I developed Book Haven,",
+      introduction: "a comprehensive question paper sharing platform where students can upload and download question papers while earning rewards. This collaborative platform helps students access previous year papers and exam materials from various institutions.",
+      contributions: [
+        "Built a complete student-focused platform using Next.js, React.js, and modern web technologies.",
+        "Implemented secure file upload and download system with organized categorization by subject and institution.",
+        "Developed a gamified reward system to incentivize student participation and content contribution.",
+        "Created user authentication and profile management for tracking uploads, downloads, and earned rewards.",
+        "Designed responsive interface using Tailwind CSS for optimal mobile and desktop experience.",
+      ],
+      projectUrl: "https://book-haven-fawn.vercel.app/",
+      projectLinkText: "Visit Book Haven",
+      features: bookHavenFeatures,
     },
   },
 

@@ -37,7 +37,7 @@ const Links = () => {
                     aria-label={label}
                     rel="noreferrer"
                     target="_blank"
-                    className="text-[#6919ff] hover:text-[#7d7b7b] focus-visible:text-white">
+                    className="text-blue-600 hover:text-[#7d7b7b] focus-visible:text-white">
                     <Icon
                         aria-hidden
                         className="size-7"

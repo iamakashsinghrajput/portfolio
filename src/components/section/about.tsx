@@ -1,27 +1,146 @@
 "use client";
 
-import React from 'react';
-import { motion, easeOut } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import heroimg from '@/src/assets/about.png';
 import { Caption, Paragraph } from '@/src/components/ui/typography';
 import Image from 'next/image';
 
 const imageVariants = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -60, scale: 1.1 },
   visible: {
     opacity: 1,
     x: 0,
+    scale: 1,
     transition: {
-      duration: 0.6,
-      ease: easeOut,
+      duration: 1,
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+    },
+  },
+};
+
+const textSectionVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.3,
     },
   },
 };
 
 const textItemVariants = {
-   hidden: { opacity: 0, y: 20 },
-   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } }
+   hidden: { opacity: 0, y: 30, scale: 0.95 },
+   visible: {
+     opacity: 1,
+     y: 0,
+     scale: 1,
+     transition: {
+       duration: 0.8,
+       ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+     },
+   }
 }
+
+
+const letterVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+    scale: 0.8,
+    rotateX: -90,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    rotateX: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -30,
+    scale: 0.8,
+    rotateX: 90,
+    transition: {
+      duration: 0.4,
+      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+    },
+  },
+}
+
+const containerVariants = {
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+  exit: {
+    transition: {
+      staggerChildren: 0.05,
+      staggerDirection: -1, // Reverse direction for exit
+    },
+  },
+}
+
+const words = [
+  "Problem Solver",
+  "Visionaries",
+  "Developer",
+  "Designer",
+  "MyAnatomy Partner",
+  "Perfectionists",
+  "Creative Minds"
+]
+
+const AnimatedWords = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsExiting(true);
+
+      // After exit animation completes, change word and start enter animation
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
+        setIsExiting(false);
+      }, 600); // Duration for exit animation
+    }, 3000); // Total cycle time
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentWord = words[currentIndex] || '';
+  const letters = currentWord.split('');
+
+  return (
+    <div className="relative h-20 flex items-center perspective-1000">
+      <motion.div
+        className="flex text-3xl sm:text-4xl lg:text-5xl font-bold text-white"
+        variants={containerVariants}
+        initial="hidden"
+        animate={isExiting ? "exit" : "visible"}
+        style={{ transformStyle: 'preserve-3d' }}
+      >
+        {letters.map((letter, index) => (
+          <motion.span
+            key={`${currentIndex}-${index}`}
+            variants={letterVariants}
+            className="inline-block"
+            style={{ transformStyle: 'preserve-3d' }}
+          >
+            {letter === ' ' ? '\u00A0' : letter}
+          </motion.span>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
 const About = () => {
   return (
@@ -41,7 +160,7 @@ const About = () => {
         >
           <Image
             src={heroimg}
-            alt="Kilian Peters - Founder of Akash Studios"
+            alt="Akash Singh - Founder of Akash Studios"
             className="object-cover w-full h-full grayscale transition-[filter] duration-500 hover:grayscale-0"
             sizes="(max-width: 1024px) 100vw, 50vw"
             priority
@@ -50,6 +169,7 @@ const About = () => {
 
         <motion.div
           className="w-full px-6 py-16 sm:px-10 sm:py-20 lg:w-1/2 lg:py-28 lg:pl-10 xl:pl-20 flex flex-col justify-center"
+          variants={textSectionVariants}
         >
            <motion.div variants={textItemVariants}>
               <Caption id="about-heading" className="text-[#6919ff] mb-4 inline-block">
@@ -57,12 +177,12 @@ const About = () => {
               </Caption>
            </motion.div>
 
-           <motion.h1
-             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
+           <motion.div
+             className="mb-6"
              variants={textItemVariants}
            >
-             AKASH STUDIOS
-           </motion.h1>
+             <AnimatedWords />
+           </motion.div>
 
            <motion.div variants={textItemVariants}>
               <Paragraph className="text-gray-400 max-w-xl">

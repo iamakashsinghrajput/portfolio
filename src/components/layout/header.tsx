@@ -5,7 +5,7 @@ import {
   MobileNavigationOverlay,
   MobileNavigationToggle,
 } from '@/src/components/layout/mobile-navigation';
-import headimg from "@/src/assets/lokkeestudios.svg";
+import headimg from "@/public/AKASHSTUDIOS2.svg";
 import Image from 'next/image';
 import { Button } from '@/src/components/ui/button';
 import { Container } from '@/src/components/ui/container';
@@ -75,11 +75,11 @@ function Header() {
               ))}
             </nav>
             <div className="flex items-center justify-center">
-              <a href="#" title="Navigate home" className="hover:animate-jiggle">
+              <a href="#" title="Navigate home" className="logo-jiggle">
                 <Image
                     src={headimg}
-                    alt="LOKKEE STUDIOS"
-                    className="h-12 md:h-12"
+                    alt="AKASH STUDIOS"
+                    className="h-5 md:h-5"
                   />
               </a>
             </div>
@@ -89,9 +89,10 @@ function Header() {
                 href="#contact"
                 size="small"
                 isGhost
-                className="rounded-full hover:bg-white hover:text-black bg-transparent text-white"
+                className="rounded-full bg-transparent text-white relative overflow-hidden group transition-colors duration-700"
               >
-                Hit us up
+                <span className="relative z-10 group-hover:text-black transition-colors duration-700">Hit us up</span>
+                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 group-hover:rotate-0 transition-all duration-700 ease-out"></div>
               </Button>
             </div>
           </div>

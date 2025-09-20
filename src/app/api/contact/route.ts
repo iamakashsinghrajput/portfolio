@@ -7,7 +7,7 @@ import React from 'react';
 const resendApiKey = process.env.RESEND_API_KEY;
 const ownerEmail = process.env.OWNER_EMAIL;
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-const absoluteLogoUrl = `${siteUrl}/lokkeestudios.svg`;
+const absoluteLogoUrl = `${siteUrl}/akashstudios.svg`;
 const fromEmail = process.env.FROM_EMAIL || 'onboarding@resend.dev';
 
 if (!resendApiKey) {

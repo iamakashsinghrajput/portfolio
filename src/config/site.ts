@@ -6,7 +6,7 @@ const siteConfig = {
     backgroundColor: '#060918',
     themeColor: '#6919FF',
     email: 'akash21052000singh@gmail.com.com',
-    // url: 'https://lokkeestudios.com',
+    // url: 'https://akashstudios.com',
     links: {
       github: 'https://github.com/iamakashsinghrajput',
       GeekForGeeks: 'https://www.geeksforgeeks.org/user/cobbler21/',

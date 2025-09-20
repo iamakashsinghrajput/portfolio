@@ -1,11 +1,11 @@
 "use client"
 
-import akashtudiosLogoImage from '@/src/assets/lokkeestudios.svg';
-import uparrow from '@/src/assets/uparrow.svg';
+import akashtudiosLogoImage from '@/public/akashstudios.svg';
 import Image from 'next/image';
 import { Container } from '@/src/components/ui/container';
 import { useState, useEffect } from 'react';
-import { cn } from '@/src/lib/utils';
+import { motion, AnimatePresence } from 'framer-motion';
+import { IconArrowUp, IconMail } from '@tabler/icons-react';
 import Links from '../section/links';
 
 const primaryLinks = [
@@ -28,9 +28,11 @@ function Footer() {
     const [showBackToTop, setShowBackToTop] = useState(false);
 
     const checkScrollTop = () => {
-        if (!showBackToTop && window.scrollY > 400) {
+        // Show button when user scrolls past hero section (approximately 100vh)
+        const heroHeight = window.innerHeight;
+        if (!showBackToTop && window.scrollY > heroHeight) {
             setShowBackToTop(true);
-        } else if (showBackToTop && window.scrollY <= 400) {
+        } else if (showBackToTop && window.scrollY <= heroHeight) {
             setShowBackToTop(false);
         }
     };
@@ -50,74 +52,158 @@ function Footer() {
     }, [showBackToTop]);
 
     return (
-        <footer
-            aria-label="Primary Footer"
-            className="relative z-10 w-full border-t-0.5 border-neutral-600 bg-neutral-900 py-3"
-        >
-            <Container>
-                <hr className="h-px border-0 bg-gradient-to-r from-transparent via-[#807f8076] to-transparent" />
-                <div className="flex justify-center py-12">
-                    <a
-                        href="#home"
-                        title="Navigate home"
-                        data-astro-prefetch 
+        <>
+            <footer
+                aria-label="Primary Footer"
+                className="relative z-10 w-full bg-gradient-to-br from-[#0a0118] via-[#1a0b2e] to-[#0a0118] border-t border-neutral-800/50"
+            >
+                <Container>
+                    {/* Main Footer Content */}
+                    <div className="py-16 md:py-20">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-start">
+                            {/* Logo and Description */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
+                                className="lg:col-span-1"
+                            >
+                                <a
+                                    href="#"
+                                    title="Navigate home"
+                                    className="inline-block mb-6 group"
+                                >
+                                    <Image
+                                        src={akashtudiosLogoImage}
+                                        alt="AKASH STUDIOS Logo"
+                                        className="h-12 w-auto transition-all duration-300 group-hover:scale-105"
+                                    />
+                                </a>
+                                <p className="text-neutral-400 text-sm leading-relaxed max-w-sm">
+                                    Crafting exceptional digital experiences with cutting-edge technology and innovative design solutions.
+                                </p>
+                            </motion.div>
+
+                            {/* Navigation Links */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
+                                className="lg:col-span-1"
+                            >
+                                <h3 className="text-white font-semibold mb-6 text-lg">Quick Links</h3>
+                                <nav
+                                    aria-label="Footer Navigation"
+                                    className="space-y-4"
+                                >
+                                    {primaryLinks.map((link, index) => (
+                                        <motion.div
+                                            key={link.href}
+                                            initial={{ opacity: 0, x: -20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
+                                        >
+                                            <a
+                                                href={link.href}
+                                                className="block text-neutral-400 hover:text-white transition-all duration-300 text-sm group relative overflow-hidden"
+                                            >
+                                                <span className="relative z-10">{link.label}</span>
+                                            </a>
+                                        </motion.div>
+                                    ))}
+                                </nav>
+                            </motion.div>
+
+                            {/* Contact Info */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                className="lg:col-span-1"
+                            >
+                                <h3 className="text-white font-semibold mb-6 text-lg">Get In Touch</h3>
+                                <div className="space-y-4">
+                                    <a
+                                        href="mailto:hello@akashstudios.com"
+                                        className="flex items-center gap-3 text-neutral-400 hover:text-white transition-all duration-300 text-sm group"
+                                    >
+                                        <div className="p-2 rounded-full bg-neutral-800/50 group-hover:bg-red-600 transition-colors duration-300">
+                                            <IconMail size={20} className="group-hover:text-white transition-colors duration-300" />
+                                        </div>
+                                        <span>hello@akashstudios.com</span>
+                                    </a>
+                                </div>
+
+                                {/* Social Links */}
+                                <div className="mt-8">
+                                    <h4 className="text-white font-medium mb-4 text-sm">Follow Us</h4>
+                                    <div className="flex gap-3">
+                                        <Links />
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+
+                    {/* Footer Bottom */}
+                    <div className="border-t border-neutral-800/50 py-8">
+                        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
+                                className="text-neutral-500 text-sm"
+                            >
+                                © {currentYear} AKASH STUDIOS. All rights reserved.
+                            </motion.p>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
+                                className="flex gap-6 text-sm"
+                            >
+                                <a href="#" className="text-neutral-500 hover:text-[#6919ff] transition-colors duration-300">
+                                    Privacy Policy
+                                </a>
+                                <a href="#" className="text-neutral-500 hover:text-[#6919ff] transition-colors duration-300">
+                                    Terms of Service
+                                </a>
+                            </motion.div>
+                        </div>
+                    </div>
+                </Container>
+            </footer>
+
+            {/* Scroll to Top Button */}
+            <AnimatePresence>
+                {showBackToTop && (
+                    <motion.button
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.5 }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={scrollToTop}
+                        aria-label="Scroll back to top"
+                        className="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-[#6919ff] text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+                        style={{
+                            boxShadow: '0 8px 32px rgba(105, 25, 255, 0.3)'
+                        }}
                     >
-                        <Image
-                            src={akashtudiosLogoImage}
-                            alt="AKASH STUDIOS Logo" 
-                            className="h-16 w-auto"
+                        <IconArrowUp
+                            size={20}
+                            className="transition-transform duration-300 group-hover:-translate-y-1"
                         />
-                    </a>
-                </div>
-                <hr className="h-px border-0 bg-gradient-to-r from-transparent via-[#807f8076] to-transparent" />
-                <nav
-                    aria-label="Primary Navigation"
-                    className="flex flex-wrap justify-center gap-6 py-12"
-                >
-                    {primaryLinks.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            className="text-sm uppercase text-neutral-400 transition-colors hover:text-neutral-50 focus-visible:text-neutral-50 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:ring-white rounded"
-                        >
-                            {link.label}
-                        </a>
-                    ))}
-                </nav>
-                <hr className="h-px border-0 bg-gradient-to-r from-transparent via-[#807f8076] to-transparent" />
-                <div className="grid grid-cols-1 items-center justify-center gap-y-8 gap-x-6 py-12 lg:grid-cols-3">
-                    <div className="flex justify-center lg:order-last lg:justify-end">
-                        <button
-                            type="button"
-                            onClick={scrollToTop}
-                            aria-label="Scroll back to top"
-                            className={cn(
-                                'p-3 rounded-full bg-neutral-700 text-neutral-100 shadow-md transition-all duration-300 ease-in-out hover:bg-neutral-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:ring-white',
-                                showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none' 
-                            )}
-                        >
-                            <Image
-                                src={uparrow}
-                                alt="" 
-                                className="w-5 h-5" 
-                                aria-hidden="true"
-                            />
-                        </button>
-                    </div>
-
-                    <ul
-                        aria-label="Social media links"
-                        className="flex flex-wrap justify-center items-center gap-4 lg:order-2" 
-                    >
-                        <Links />
-                    </ul>
-
-                    <div className="flex justify-center lg:order-first lg:justify-start">
-                        <small className="text-xs text-neutral-500">© {currentYear} AKASH STUDIOS</small>
-                    </div>
-                </div>
-            </Container>
-        </footer>
+                    </motion.button>
+                )}
+            </AnimatePresence>
+        </>
     );
 }
 

@@ -157,3 +157,81 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/* Custom utilities */
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .perspective-2000 {
+    perspective: 2000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Smooth scrolling improvements */
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /* Better focus outlines */
+  *:focus-visible {
+    outline: 2px solid #6919ff;
+    outline-offset: 2px;
+  }
+
+  /* Loader animations */
+  @keyframes grid-move {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(50px, 50px);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(105, 25, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(105, 25, 255, 0.6);
+    }
+  }
+
+  @keyframes jiggle {
+    50% { transform: skew(-6deg) skewY(-6deg); }
+  }
+
+  .animate-jiggle {
+    animation: jiggle 0.6s ease-in-out;
+  }
+
+  .hover\:animate-jiggle:hover {
+    animation: jiggle 0.6s ease-in-out;
+  }
+
+  .logo-jiggle {
+    transition: transform 0.2s ease;
+  }
+
+  .logo-jiggle:hover {
+    animation: jiggle 0.6s ease-in-out;
+  }
+}
