@@ -31,6 +31,7 @@ export const EmailTemplateToOwner: React.FC<Readonly<EmailTemplateProps>> = ({
       <div style={{
         marginBottom: '20px'
       }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={absoluteLogoUrl}
           alt="AKASH STUDIOS Logo"
