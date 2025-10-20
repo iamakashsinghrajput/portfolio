@@ -21,13 +21,13 @@ module.exports = {
           },
         ],
       });
-  
+
       // Ignore the canvas.node file
       config.module.rules.push({
         test: /\.node$/,
         loader: 'ignore-loader',
       });
-  
+
       return config;
     },
   };

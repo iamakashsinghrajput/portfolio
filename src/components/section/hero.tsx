@@ -1,213 +1,243 @@
-"use client";
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '@/src/components/ui/button';
-import { Container } from '@/src/components/ui/container';
-import { GridBackground } from '@/src/components/grid-background';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.3,
+// --- Main Hero Component ---
+const App = () => {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  // --- Animation Variants for a simple, elegant fade-in ---
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.4, delayChildren: 0.2 }
     },
-  },
-};
+  };
 
-const slideUpVariants = {
-  hidden: { opacity: 0, y: 60, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+  const itemVariants = {
+    hidden: { y: 10, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: 'easeOut' }
     },
-  },
-};
+  };
 
-const titleVariants = {
-  hidden: { opacity: 0, y: 50, rotateX: 15 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    rotateX: 0,
-    transition: {
-      duration: 1,
-      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+  const boxVariants = {
+    hidden: {
+      scale: 0.8,
+      opacity: 0,
+      rotateX: 45,
+      y: 100
     },
-  },
-};
-
-const buttonVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
+    visible: {
+      scale: 1,
+      opacity: 1,
+      rotateX: 0,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
     },
-  },
-};
-
-const primaryButtonBaseClasses = "bg-[#F3F3E0] text-blue-900 border-[#F3F3E0]";
-const secondaryButtonBaseClasses = "text-[#F3F3E0] border-[#F3F3E0] bg-transparent";
-
-const transitionClasses = "transform transition-all duration-700 ease-in-out";
+  };
 
 
-const Hero = () => {
-  const [hoveredButton, setHoveredButton] = useState<string | null>(null);
-
-  // Button states based on hover
-  let button1Classes, button2Classes;
-
-  if (hoveredButton === 'dig-universe') {
-    // When hovering "Dig into universe":
-    // - Dig button gets white bg + blue text
-    // - Download button gets white bg + blue text
-    button1Classes = "bg-white text-blue-950 border-white";
-    button2Classes = "bg-white text-blue-950 border-white";
-  } else if (hoveredButton === 'download-resume') {
-    // When hovering "Download resume":
-    // - Dig button stays hero bg + white border + white text
-    // - Download button gets hero bg + white border + white text
-    button1Classes = "bg-transparent text-[#F3F3E0] border-[#F3F3E0]";
-    button2Classes = "bg-transparent text-[#F3F3E0] border-[#F3F3E0]";
-  } else {
-    // Default state:
-    // - Dig button: hero bg + white border + white text (secondary)
-    // - Download button: white bg + blue text (primary)
-    button1Classes = secondaryButtonBaseClasses;
-    button2Classes = primaryButtonBaseClasses;
-  }
-
-  const gradientClasses = "bg-gradient-to-br from-blue-900 via-blue-950 to-teal-900";
-  const headingColor = "text-[#F3F3E0]";
 
   return (
-    <motion.section
-      aria-labelledby="hero-heading"
-      className={`${gradientClasses} relative flex w-full flex-col justify-center overflow-hidden py-28 md:py-36 lg:py-48 z-0 min-h-screen`}
+    // Main section with the dark theme and layout structure
+    <motion.section 
+      className="relative flex items-center justify-center w-screen h-screen overflow-hidden bg-[#0a0a0a] font-sans select-none"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      viewport={{ once: true, amount: 0.2 }}
     >
+      {/* 1. Giant Background Text "Hello" with glow effect */}
       <motion.div
-        className="absolute inset-0 w-full h-full -z-10"
-        initial={{ opacity: 0, scale: 1.1 }}
-        animate={{
-          opacity: 1,
-          scale: 1,
-          transition: { duration: 2, ease: "easeOut" }
+        className="absolute text-[45vw] font-black text-[#1a1a1a] z-0"
+        aria-hidden="true"
+        style={{
+          textShadow: '0 5px 15px rgba(0,0,0,0.2), 0 -20px 40px rgba(59, 130, 246, 0.3), 0 -40px 80px rgba(147, 197, 253, 0.2), 0 -60px 120px rgba(219, 234, 254, 0.1)',
+          background: 'linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 0%, transparent 30%)',
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text'
         }}
+        variants={itemVariants}
       >
-        <GridBackground />
+        Hello
       </motion.div>
 
-      <Container className="relative z-10">
+      {/* 2. Vertical Dividing Line */}
+      <div className="absolute left-1/2 top-0 h-full w-px bg-[#333] -translate-x-1/2 z-10"></div>
+      
+      {/* 3. Central Content Boxes */}
+      <div
+        className="relative z-20 flex flex-col text-center gap-y-4"
+        style={{ perspective: '1000px' }}
+      >
+        {/* Box for Name */}
         <motion.div
-          className="flex flex-col items-center justify-center"
-          variants={slideUpVariants}
+          className="bg-white text-black py-4 px-10 shadow-lg cursor-pointer"
+          variants={boxVariants}
+          whileHover={{
+            scale: 1.05,
+            rotateY: 5,
+            z: 20,
+            boxShadow: "0 20px 40px rgba(255,255,255,0.2)",
+            transition: { duration: 0.3, ease: "easeOut" }
+          }}
+          whileTap={{
+            scale: 0.98,
+            transition: { duration: 0.1 }
+          }}
+          style={{ transformStyle: 'preserve-3d' }}
         >
           <motion.h1
-            className={`${headingColor} text-balance text-center text-4xl font-bold sm:text-5xl/tight md:text-7xl lg:text-8xl/tight mb-12 perspective-1000`}
-            variants={titleVariants}
+            className="text-xl font-bold tracking-widest uppercase text-[#333]"
+            whileHover={{
+              textShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
+              color: "#1a1a1a"
+            }}
           >
-            <motion.span
-              className="inline-block"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { delay: 0.5, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }
-              }}
-            >
-              Akash Singh
-            </motion.span>
-            <br />
-            <motion.span
-              className="inline-block"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { delay: 0.7, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] }
-              }}
-            >
-              Full Stack Developer
-            </motion.span>
+            Akash Singh
           </motion.h1>
-
-          <motion.div
-            className="mt-12 flex items-stretch gap-x-6 gap-y-3 max-sm:flex-col sm:items-center"
-            onMouseLeave={() => setHoveredButton(null)}
-            variants={buttonVariants}
-          >
-            <motion.div
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.2, ease: "easeOut" }
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="relative overflow-hidden"
-            >
-              <Button
-                as="a"
-                href="/#work"
-                size="large"
-                className={`
-                   ${button1Classes}
-                   border-1
-                   ${transitionClasses}
-                   relative overflow-hidden group
-                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white focus-visible:ring-offset-blue-950
-                `}
-                onMouseEnter={() => setHoveredButton('dig-universe')}
-              >
-                <span className="relative z-10 transition-colors duration-700">Dig into my universe</span>
-                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 group-hover:rotate-0 transition-all duration-700 ease-out"></div>
-              </Button>
-            </motion.div>
-
-            <motion.div
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.2, ease: "easeOut" }
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="relative overflow-hidden"
-            >
-              <Button
-                as="a"
-                href="/AkashResume_figma.pdf"
-                size="large"
-                download
-                className={`
-                  ${button2Classes}
-                  border-1
-                  ${transitionClasses}
-                  relative overflow-hidden group
-                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F3F3E0] focus-visible:ring-offset-blue-950
-                `}
-                onMouseEnter={() => setHoveredButton('download-resume')}
-              >
-                <span className="relative z-10 transition-colors duration-700">Download My Resume</span>
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-950 to-teal-900 transform -translate-x-full group-hover:translate-x-0 group-hover:rotate-0 transition-all duration-700 ease-out"></div>
-              </Button>
-            </motion.div>
-          </motion.div>
         </motion.div>
-      </Container>
+
+        {/* Box for Title */}
+        <motion.div
+          className="bg-white text-black py-4 px-10 shadow-lg cursor-pointer"
+          variants={boxVariants}
+          whileHover={{
+            scale: 1.05,
+            rotateY: -5,
+            z: 20,
+            boxShadow: "0 20px 40px rgba(255,255,255,0.2)",
+            transition: { duration: 0.3, ease: "easeOut" }
+          }}
+          whileTap={{
+            scale: 0.98,
+            transition: { duration: 0.1 }
+          }}
+          style={{ transformStyle: 'preserve-3d' }}
+        >
+          <motion.p
+            className="text-sm font-medium tracking-[0.15em] uppercase text-[#333]"
+            whileHover={{
+              textShadow: "0 0 20px rgba(16, 185, 129, 0.5)",
+              color: "#1a1a1a"
+            }}
+          >
+            Full Stack Developer
+          </motion.p>
+        </motion.div>
+
+        {/* Download Resume Button */}
+        <motion.div
+          className="mt-8"
+          variants={boxVariants}
+        >
+          <motion.button
+            className="bg-black text-white py-4 px-10 shadow-lg cursor-pointer border-2 border-white/20 hover:border-white/40 transition-colors duration-300"
+            whileHover={{
+              scale: 1.05,
+              rotateY: -3,
+              z: 15,
+              boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
+              backgroundColor: "#1a1a1a",
+              borderColor: "rgba(255, 255, 255, 0.6)",
+              transition: { duration: 0.3, ease: "easeOut" }
+            }}
+            whileTap={{
+              scale: 0.98,
+              transition: { duration: 0.1 }
+            }}
+            onClick={async () => {
+              if (isDownloading) return;
+
+              setIsDownloading(true);
+
+              try {
+                // Create a temporary link element to trigger download
+                const link = document.createElement('a');
+                link.href = '/Akash_Resume_SDE.pdf'; // Path to resume in public folder
+                link.download = 'Akash_Singh_Resume.pdf';
+                link.target = '_blank'; // Open in new tab as fallback
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Optional: Add analytics or feedback here
+                console.log('Resume download initiated');
+
+                // Brief delay to show feedback
+                setTimeout(() => setIsDownloading(false), 1500);
+              } catch (error) {
+                console.error('Download failed:', error);
+                // Fallback: open in new tab
+                window.open('/resume/Akash_Singh_Resume.pdf', '_blank');
+                setIsDownloading(false);
+              }
+            }}
+            style={{ transformStyle: 'preserve-3d' }}
+          >
+            <motion.span
+              className="flex items-center justify-center gap-3 text-sm font-bold tracking-[0.15em] uppercase"
+              whileHover={{
+                textShadow: "0 0 20px rgba(255, 255, 255, 0.4)",
+                color: "#ffffff"
+              }}
+            >
+              {isDownloading ? (
+                <>
+                  <motion.svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    />
+                  </motion.svg>
+                  Downloading...
+                </>
+              ) : (
+                <>
+                  <motion.svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    whileHover={{
+                      y: [0, -2, 0],
+                      transition: { duration: 0.6, repeat: Infinity }
+                    }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </motion.svg>
+                  Download Resume
+                </>
+              )}
+            </motion.span>
+          </motion.button>
+        </motion.div>
+      </div>
     </motion.section>
   );
 };
 
-export default Hero;
+export default App;
+
